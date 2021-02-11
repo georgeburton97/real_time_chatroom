@@ -1,0 +1,28 @@
+/* colours */
+
+/* 
+#E27D60
+#85DCB
+#E8A87C
+#C38D9E
+#41B3A3
+ */
+
+body {
+    background-color: #fff;
+}
+
+.container {
+    max-width: 600px;
+}
+
+.btn {
+    background: #41b3a3;
+    color: #fff;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn:focus {
+    outline: none !important;
+}
