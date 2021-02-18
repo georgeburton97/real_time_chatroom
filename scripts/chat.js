@@ -25,7 +25,7 @@ class Chatroom {
         return response;
     }
     getChats(callback){
-        this.unsub = this.chats
+        this.unsub = this.chats 
             .where('room', '==', this.room)
             .orderBy('created_at')
             .onSnapshot(snapshot => {
@@ -38,7 +38,8 @@ class Chatroom {
             });
     }
     updateName(username){
-        this.usenrame = username;
+        this.username = username;
+        localStorage.setItem('username', username);
     }
 
     updateRoom(room){
@@ -49,19 +50,3 @@ class Chatroom {
         }
     }
 }
-
-
-const chatroom = new Chatroom('general', 'shaun')
-
-chatroom.getChats((data) => {
-    console.log(data)
-});
-
-setTimeout(() => {
-    chatroom.updateRoom('gaming');
-    chatroom.updateName('George');
-    chatroom.getChats((data) => {
-        console.log(data)
-    });
-    chatroom.addChat('hello');
-}, 3000);
